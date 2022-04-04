@@ -1,0 +1,10 @@
+{
+    "nor-ukr": {
+        "input": "nor-ukr-input.txt",
+        "mode": "nor-ukr"
+    },
+    "ukr-nor": {
+        "input": "ukr-nor-input.txt",
+        "mode": "ukr-nor"
+    }
+}
