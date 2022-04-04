@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modes>
 
-  <!-- nor → ukr -->
+  <!-- nob → ukr -->
 
-  <mode name="nor-ukr" install="yes" gendebug="yes">
+  <mode name="nob-ukr" install="yes" gendebug="yes">
     <pipeline>
 
       <program name="lt-proc -w">
-        <file name="nor-ukr.automorf.bin"/>
+        <file name="nob-ukr.automorf.bin"/>
       </program>
-
-
-      <program name="cg-proc -w">
-        <file name="nor-ukr.rlx.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="nor-ukr.prob"/>
+      <program name="cg-proc -w1n">
+        <file name="nob-ukr.rlx.bin"/>
       </program>
       <program name="apertium-pretransfer"/>
       <program name="lt-proc -b">
@@ -24,12 +19,9 @@
       <program name="lrx-proc -m">
         <file name="nor-ukr.autolex.bin"/>
       </program>
-
-
       <program name="rtx-proc">
         <file name="nor-ukr.rtx.bin"/>
       </program>
-
       <program name="lt-proc $1">
         <file name="nor-ukr.autogen.bin"/>
       </program>
@@ -39,23 +31,78 @@
     </pipeline>
   </mode>
 
-  <!-- ukr → nor -->
+  <!-- nno → ukr -->
 
-  <mode name="ukr-nor" install="yes" gendebug="yes">
+  <mode name="nno-ukr" install="yes" gendebug="yes">
     <pipeline>
+      <program name="lt-proc -w">
+        <file name="nno-ukr.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w1n">
+        <file name="nno-ukr.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="nor-ukr.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="nor-ukr.autolex.bin"/>
+      </program>
+      <program name="rtx-proc">
+        <file name="nor-ukr.rtx.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="nor-ukr.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="nor-ukr.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
 
+
+  <!-- ukr → nob -->
+
+  <mode name="ukr-nob" install="yes" gendebug="yes">
+    <pipeline>
       <program name="lt-proc -w">
         <file name="ukr-nor.automorf.bin"/>
       </program>
-
-
       <program name="cg-proc -w">
         <file name="ukr-nor.rlx.bin"/>
       </program>
       <program name="apertium-tagger -g $2">
         <file name="ukr-nor.prob"/>
       </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ukr-nor.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="ukr-nor.autolex.bin"/>
+      </program>
+      <program name="rtx-proc">
+        <file name="ukr-nor.rtx.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ukr-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
 
+  <!-- ukr → nno -->
+
+  <mode name="ukr-nno" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ukr-nor.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ukr-nor.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ukr-nor.prob"/>
+      </program>
       <program name="apertium-pretransfer"/>
       <program name="lt-proc -b">
         <file name="ukr-nor.autobil.bin"/>
@@ -70,7 +117,7 @@
       </program>
 
       <program name="lt-proc $1">
-        <file name="ukr-nor.autogen.bin"/>
+        <file name="ukr-nno.autogen.bin"/>
       </program>
     </pipeline>
   </mode>
