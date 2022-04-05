@@ -1,4 +1,4 @@
-AC_PREREQ([2.71])
+AC_PREREQ([2.69])
 
 AC_INIT([Apertium Norwegian-Ukrainian],[0.1.0],[flammie@iki.fi],[apertium-nor-ukr],[https://wiki.apertium.org/wiki/Apertium-nor-ukr])
 AM_INIT_AUTOMAKE
